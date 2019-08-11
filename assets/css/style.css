@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main > .background {
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/overlay.png),
+    linear-gradient(45deg, #3a3446 15%, #252258 85%);
+}
+
+main > .background > img {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.4;
+}
+
+main > .background > .title {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+}
+
+main > .background > .title > div {
+  display: flex;
+}
+
+main > .background > .title > div > h1 {
+  color: #e31b6d;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+@keyframes buttonWork {
+  from {
+    opacity: 0.1;
+    margin-top: 300px;
+  }
+}
+
+main > .background > .title > div > button {
+  font-family: 'Raleway', sans-serif;
+  padding: 12px 20px;
+  margin-top: 40px;
+  font-size: 22px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  transition: background-color 0.5s, border-color 0.5s;
+}
+
+main > .background > .title > div.animated {
+  animation: buttonWork 1s;
+}
+
+main > .background > .title > div > button:hover {
+  background-color: #04c2c9;
+  border-color: #04c2c9;
+}
+
+main > .background > .title > div > button > i {
+  margin-left: 15px;
+  display: flex;
+  align-self: center;
+  transition: transform 0.5s;
+}
+
+main > .background > .title > div > button:hover > i {
+  transform: rotate(90deg);
+}
+
+.line-separator {
+  height: 3px;
+  background-color: #04c2c9;
+}
+
+section > div,
+section > div > header {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0.5;
+    margin-left: -500px;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0.5;
+    margin-right: -500px;
+    visibility: visible;
+  }
+}
+
+section > div > header > h2 {
+  margin-top: 100px;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #444649;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+section > div > header > .separator {
+  width: 70px;
+  height: 4px;
+  background: #444649;
+  margin: 25px 0 100px 0;
+  visibility: hidden;
+}
+
+section > div > header > h2.animated {
+  visibility: visible;
+  animation: fadeLeft 0.75s;
+}
+
+section > div > header > .separator.animated {
+  visibility: visible;
+  animation: fadeLeft 1.75s;
+}
+
+section.about > div > main > .characteristics {
+  display: flex;
+  justify-content: center;
+}
+
+section.about > div > main > .characteristics > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+}
+
+@keyframes fadeCharacteristicHeader {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+}
+
+section.about > div > main > .characteristics > div > header {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+}
+
+section.about > div > main > .characteristics > div > header.animated {
+  opacity: 1;
+  animation: fadeCharacteristicHeader 0.75s ease both;
+}
+
+section.about
+  > div
+  > main
+  > .characteristics
+  > div:nth-child(2)
+  > header.animated {
+  animation-delay: 0.2s;
+}
+
+section.about
+  > div
+  > main
+  > .characteristics
+  > div:nth-child(3)
+  > header.animated {
+  animation-delay: 0.4s;
+}
+
+section.about
+  > div
+  > main
+  > .characteristics
+  > div:nth-child(4)
+  > header.animated {
+  animation-delay: 0.6s;
+}
+
+section.about > div > main > .characteristics > div > header > div {
+  background-color: #04c2c9;
+  height: 100%;
+  width: calc(100% * 0.57735);
+  display: inline-block;
+}
+
+section.about > div > main > .characteristics > div > header > div:before {
+  position: absolute;
+  top: 0;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  background-color: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotateZ(60deg);
+}
+
+section.about > div > main > .characteristics > div > header > div:after {
+  position: absolute;
+  top: 0;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  background-color: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotateZ(-60deg);
+}
+
+section.about > div > main > .characteristics > div > header > div > i {
+  position: absolute;
+  top: 20px;
+  font-size: 55px;
+  color: #fff;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@keyframes fadeCharacteristicMain {
+  from {
+    opacity: 0;
+  }
+}
+
+section.about > div > main > .characteristics > div > main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+section.about > div > main > .characteristics > div > main.animated {
+  opacity: 1;
+  animation: fadeCharacteristicMain 0.75s ease both;
+}
+
+section.about
+  > div
+  > main
+  > .characteristics
+  > div:nth-child(2)
+  > main.animated {
+  animation-delay: 0.2s;
+}
+
+section.about
+  > div
+  > main
+  > .characteristics
+  > div:nth-child(3)
+  > main.animated {
+  animation-delay: 0.4s;
+}
+
+section.about
+  > div
+  > main
+  > .characteristics
+  > div:nth-child(4)
+  > main.animated {
+  animation-delay: 0.6s;
+}
+
+section.about > div > main > .characteristics > div > main > h3,
+section.about > div > footer > div > h3 {
+  margin: 15px 0 5px 0;
+  font-size: 25px;
+  font-weight: bold;
+  color: #616161;
+}
+
+section.about > div > main > .characteristics > div > main > p,
+section.about > div > footer > div > p {
+  color: #616161;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+section.about > div > footer {
+  display: flex;
+  margin: 100px 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@keyframes rotateX {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+}
+
+section.about > div > footer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  opacity: 0;
+}
+
+section.about > div > footer > div:nth-child(1).animated,
+section.about > div > footer > .knowledges.animated {
+  opacity: 1;
+  animation: rotateX 0.75s ease both;
+}
+
+section.about > div > footer > div > img {
+  width: 280;
+  height: 250px;
+}
+
+section.about > div > footer > .knowledges {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 15px);
+}
+
+section.about > div > footer > .knowledges > div {
+  display: flex;
+  justify-content: space-between;
+  height: 28px;
+  background-color: #eee;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+section.about > div > footer > .knowledges > div > div {
+  width: 100%;
+}
+
+section.about > div > footer > .knowledges > div > div > .bar {
+  background-color: #00a1a7;
+  height: 100%;
+}
+
+section.about > div > footer > .knowledges > div > div > .bar > .tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 100%;
+  background-color: #04c2c9;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+section.about > div > footer > .knowledges > div > span {
+  width: 70px;
+  text-align: center;
+  align-self: center;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 16px;
+  height: 100%;
+  background-color: #e31b6d;
+  line-height: 28px;
+}
+
+section.projects {
+  padding-top: 100px 0 130px 0;
+  background-color: #f5f5f5;
+}
+
+section.projects > div > header > h2.animated {
+  visibility: visible;
+  animation: fadeRight 0.75s;
+}
+
+section.projects > div > header > .separator.animated {
+  visibility: visible;
+  animation: fadeRight 1.75s;
+}
