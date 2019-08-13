@@ -2,7 +2,7 @@ const isVisibleElement = element => {
   const windowBottomEdge = window.pageYOffset + window.innerHeight
   const elementTopEdge = element.offsetTop
 
-  return elementTopEdge + 300 <= windowBottomEdge
+  return elementTopEdge + 100 <= windowBottomEdge
 }
 
 const animateElements = () => {
@@ -22,3 +22,15 @@ window.onscroll = function() {
 setTimeout(() => {
   animateElements()
 }, 10)
+
+const scrollTo = element => {
+  window.scroll({
+    behavior: 'smooth',
+    left: 0,
+    top: element.offsetTop
+  })
+}
+
+document.getElementById('view-my-work').addEventListener('click', () => {
+  scrollTo(document.getElementById('projects'))
+})

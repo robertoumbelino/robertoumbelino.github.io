@@ -400,6 +400,9 @@ section.about > div > footer > .knowledges > div > div > .bar > .tag {
   color: #fff;
   font-size: 18px;
   font-weight: bolder;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 section.about > div > footer > .knowledges > div > span {
@@ -556,4 +559,69 @@ section.projects > div > main > .gallery.animated > div:nth-child(odd) {
 
 section.projects > div > main > .gallery.animated > div:nth-child(even) {
   animation-delay: 0.4s;
+}
+
+section.contact {
+  margin: 100px 0 0 0;
+  background-color: #252934;
+}
+
+section.contact > svg {
+  fill: #252934;
+}
+
+section.contact > div {
+  margin-bottom: 0;
+}
+
+section.contact > div > header > h2 {
+  color: #fff;
+}
+
+section.contact > div > header > div {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+section.contact > div > main > div {
+  display: flex;
+}
+
+section.contact > div > main > div > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #262f38;
+  margin: 15px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+section.contact > div > main > div > a:hover {
+  background: #04c2c9;
+}
+
+section.contact > div > main > div.animated > a {
+  opacity: 1;
+  animation: rotateX 0.75s ease both;
+}
+
+section.contact > div > main > div > a > i {
+  padding: 15px;
+  font-size: 26px;
+}
+
+section.contact > div > footer {
+  margin: 100px 0 100px 0;
+}
+
+section.contact > div > footer > p {
+  color: #8f9aa7;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+section.contact > div > footer > p > span {
+  color: #e31b6d;
 }
