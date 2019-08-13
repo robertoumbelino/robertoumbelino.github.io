@@ -8,6 +8,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 main > .background {
@@ -103,6 +104,13 @@ section > div > header {
   margin-bottom: 50px;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+    visibility: visible;
+  }
+}
+
 @keyframes fadeLeft {
   from {
     opacity: 0.5;
@@ -116,6 +124,17 @@ section > div > header {
     opacity: 0.5;
     margin-right: -500px;
     visibility: visible;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    margin-top: 50px;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
@@ -149,13 +168,17 @@ section > div > header > .separator.animated {
 section.about > div > main > .characteristics {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -30px;
 }
 
 section.about > div > main > .characteristics > div {
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 25px;
+  margin-top: 30px;
 }
 
 @keyframes fadeCharacteristicHeader {
@@ -308,10 +331,11 @@ section.about > div > footer > div > p {
 
 section.about > div > footer {
   display: flex;
-  margin: 100px 0;
+  margin: 100px 0 70px 0;
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 @keyframes rotateX {
@@ -322,11 +346,13 @@ section.about > div > footer {
 }
 
 section.about > div > footer > div {
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 10px;
   opacity: 0;
+  margin-bottom: 30px;
 }
 
 section.about > div > footer > div:nth-child(1).animated,
@@ -401,4 +427,133 @@ section.projects > div > header > h2.animated {
 section.projects > div > header > .separator.animated {
   visibility: visible;
   animation: fadeRight 1.75s;
+}
+
+section.projects > div > main > .project-menu {
+  display: flex;
+  justify-content: center;
+  margin: -50px 0 20px 0;
+  visibility: hidden;
+}
+
+section.projects > div > main > .project-menu.animated {
+  visibility: visible;
+  animation: fadeIn 1.5s ease;
+}
+
+section.projects > div > main > .project-menu > button {
+  color: #616161;
+  padding: 5px 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  margin: 0 25px;
+  background: transparent;
+  font-weight: bolder;
+}
+
+section.projects > div > main > .project-menu > button.active {
+  background-color: #e31b6d;
+  color: #fff;
+}
+
+section.projects > div > main > .gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section.projects > div > main > .gallery > div {
+  width: 390px;
+  height: 300px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+section.projects > div > main > .gallery > div > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
+section.projects > div > main > .gallery > div:hover {
+  cursor: pointer;
+}
+
+section.projects > div > main > .gallery > div:hover > div {
+  background-color: #fff;
+}
+
+section.projects > div > main > .gallery > div > div > strong {
+  opacity: 0;
+  font-size: 20px;
+  color: #1b242f;
+  transition: all 0.5s;
+}
+
+section.projects > div > main > .gallery > div > div > span {
+  opacity: 0;
+  font-size: 16px;
+  color: #e31b6d;
+  transition: all 0.5s;
+}
+
+section.projects > div > main > .gallery > div:hover > div > strong {
+  opacity: 1;
+}
+
+section.projects > div > main > .gallery > div:hover > div > span {
+  opacity: 1;
+}
+
+section.projects > div > main > .gallery > div > div > button {
+  opacity: 0;
+  margin-top: 180px;
+  font-size: 16px;
+  color: #1b242f;
+  text-transform: uppercase;
+  border: 2px solid #e31b6d;
+  width: 170px;
+  padding: 7px 0;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+section.projects > div > main > .gallery > div:hover > div > button {
+  opacity: 1;
+  margin-top: 80px;
+}
+
+section.projects > div > main > .gallery > div:hover > div > button:hover {
+  color: #fff;
+  background: #e31b6d;
+}
+
+section.projects > div > main > .gallery > div > img {
+  width: 390px;
+  height: 300px;
+}
+
+section.projects > div > main > .gallery.animated > div {
+  opacity: 1;
+  animation: fadeDown 0.75s ease both;
+}
+
+section.projects > div > main > .gallery.animated > div:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+section.projects > div > main > .gallery.animated > div:nth-child(even) {
+  animation-delay: 0.4s;
 }
